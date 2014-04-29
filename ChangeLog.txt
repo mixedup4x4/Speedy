@@ -1,0 +1,38 @@
+-------------------------------
+2.25.2014
+*Started Development
+-------------------------------
+2.26.2014
+*Proxy Validator working
+*Automater Working
+-------------------------------
+2.27.2014
+*Added ChangeLog
+*Script Modification
+*Added Putty
+*Added BlackHole access
+*Added Dress access
+*Minor housekeeping
+*Added a few new files to the 
+ Cmdtools they will be used
+ after later updates
+*
+-------------------------------
+2.28.2014
+*Added ability to check a file
+ and it's hash against the 
+ database at VirusTotal
+*
+-------------------------------
+3.4.2014
+*Update sites.xml for AutoMater
+-------------------------------
+3.28.2014
+*Removed HashChecking for now
+*
+-------------------------------
+-------------------------------
+4.28.2014
+*Added email from AutoMater
+*
+-------------------------------

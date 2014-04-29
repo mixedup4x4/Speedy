@@ -1,0 +1,6 @@
+********************************************************************************
+Command Line: fciv.exe c:\Users\jchapell\Desktop\Working\Files -r -sha1 -xml dbsha.xml 
+
+********************************************************************************
+Command Line: fciv.exe c:\Users\jchapell\Desktop\Working\Files -r -wp -sha1 -xml dbsha.xml 
+
