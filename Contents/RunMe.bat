@@ -78,8 +78,11 @@ echo *
 ::del c:\Users\Public\Temp\AutoMaterResults.txt
 SET /p tix="Enter Remedy Ticket Number: "
 SET /p who="What group submitted the BR (CSIRC, NSOC, etc.): "
+SET Subj=BR-%tix%
+SET File=C:\Users\%USERNAME%\Desktop\BlockRequests\%who%-BR-%tix%.txt
 echo Running AutoMater and Setting FileName to BR-%tix%
 @echo off
+del c:\Users\Public\temp\*.txt
 :: * Make Directory to use
 :: * Running AutoMater and creating the initial Results file
 automater.py --p list.txt -o c:\Users\%USERNAME%\Desktop\BlockRequests\Temp-%tix%.txt
@@ -87,10 +90,15 @@ automater.py --p list.txt -o c:\Users\%USERNAME%\Desktop\BlockRequests\Temp-%tix
 findstr /v "No results" c:\Users\%USERNAME%\Desktop\BlockRequests\Temp-%tix%.txt > C:\Users\%USERNAME%\Desktop\BlockRequests\%who%-BR-%tix%.txt
 :: * Opening finished file
 start C:\Users\%USERNAME%\Desktop\BlockRequests\%who%-BR-%tix%.txt
-copy C:\Users\%USERNAME%\Desktop\BlockRequests\%who%-BR-%tix%.txt c:\Users\Public\Temp\AutoMaterResults.txt
+copy C:\Users\%USERNAME%\Desktop\BlockRequests\%who%-BR-%tix%.txt c:\Users\Public\Temp\temp.txt
+echo. %who%-BR-%tix%>c:\Users\Public\Temp\%who%-%tix%-BR.txt
+type c:\Users\Public\Temp\temp.txt >>c:\Users\Public\Temp\%who%-%tix%-BR.txt
+del c:\Users\Public\Temp\temp.txt
 :: * Deleting initial file
 del c:\Users\%USERNAME%\Desktop\BlockRequests\Temp-%tix%.txt
-cscript //nologo email.vbs
+@echo off
+cscript //nologo email2.vbs
+pause
 goto Start
 :wip
 ECHO Work In progress!...Check back for updates
